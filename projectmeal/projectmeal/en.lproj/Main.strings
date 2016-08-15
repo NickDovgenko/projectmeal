@@ -1,15 +1,0 @@
-
-/* Class = "UIViewController"; title = "Main view"; ObjectID = "BYZ-38-t0r"; */
-"BYZ-38-t0r.title" = "Main view";
-
-/* Class = "UITextView"; text = "Создание  рецепта"; ObjectID = "i9J-QZ-CD2"; */
-"i9J-QZ-CD2.text" = "Создание  рецепта";
-
-/* Class = "UITextView"; text = "Мои \nрецепты"; ObjectID = "rxi-NY-xg9"; */
-"rxi-NY-xg9.text" = "Мои \nрецепты";
-
-/* Class = "UINavigationItem"; title = "Создание рецепта"; ObjectID = "tKs-En-vXM"; */
-"tKs-En-vXM.title" = "Создание рецепта";
-
-/* Class = "UIViewController"; title = "Создание рецепта"; ObjectID = "y23-Ah-5wx"; */
-"y23-Ah-5wx.title" = "Создание рецепта";

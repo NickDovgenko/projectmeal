@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0125663B1D58A136003085DA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0125663A1D58A136003085DA /* Info.plist */; };
 		0133F34E1D4A825900F245E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F34D1D4A825900F245E6 /* AppDelegate.swift */; };
 		0133F3501D4A825900F245E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F34F1D4A825900F245E6 /* ViewController.swift */; };
 		0133F3531D4A825900F245E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133F3511D4A825900F245E6 /* Main.storyboard */; };
-		0133F3561D4A825900F245E6 /* projectmeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0133F3541D4A825900F245E6 /* projectmeal.xcdatamodeld */; };
 		0133F3581D4A825900F245E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0133F3571D4A825900F245E6 /* Assets.xcassets */; };
 		0133F35B1D4A825900F245E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133F3591D4A825900F245E6 /* LaunchScreen.storyboard */; };
 		0133F3661D4A825900F245E6 /* projectmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F3651D4A825900F245E6 /* projectmealTests.swift */; };
@@ -35,14 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0125663A1D58A136003085DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0133F34A1D4A825900F245E6 /* projectmeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectmeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0133F34D1D4A825900F245E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0133F34F1D4A825900F245E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0133F3521D4A825900F245E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0133F3551D4A825900F245E6 /* projectmeal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = projectmeal.xcdatamodel; sourceTree = "<group>"; };
 		0133F3571D4A825900F245E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0133F35A1D4A825900F245E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0133F35C1D4A825900F245E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0133F3611D4A825900F245E6 /* projectmealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectmealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0133F3651D4A825900F245E6 /* projectmealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectmealTests.swift; sourceTree = "<group>"; };
 		0133F3671D4A825900F245E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,8 +103,7 @@
 				0133F3511D4A825900F245E6 /* Main.storyboard */,
 				0133F3571D4A825900F245E6 /* Assets.xcassets */,
 				0133F3591D4A825900F245E6 /* LaunchScreen.storyboard */,
-				0133F35C1D4A825900F245E6 /* Info.plist */,
-				0133F3541D4A825900F245E6 /* projectmeal.xcdatamodeld */,
+				0125663A1D58A136003085DA /* Info.plist */,
 			);
 			path = projectmeal;
 			sourceTree = "<group>";
@@ -190,12 +188,16 @@
 		0133F3421D4A825900F245E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					"Создание рецепта",
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Nick;
 				TargetAttributes = {
 					0133F3491D4A825900F245E6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 3CCK54YKGM;
 					};
 					0133F3601D4A825900F245E6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -232,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0125663B1D58A136003085DA /* Info.plist in Resources */,
 				0133F35B1D4A825900F245E6 /* LaunchScreen.storyboard in Resources */,
 				0133F3581D4A825900F245E6 /* Assets.xcassets in Resources */,
 				0133F3531D4A825900F245E6 /* Main.storyboard in Resources */,
@@ -259,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0133F3561D4A825900F245E6 /* projectmeal.xcdatamodeld in Sources */,
 				0133F3501D4A825900F245E6 /* ViewController.swift in Sources */,
 				0133F34E1D4A825900F245E6 /* AppDelegate.swift in Sources */,
 			);
@@ -404,22 +406,26 @@
 		0133F3761D4A825900F245E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = projectmeal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmeal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		0133F3771D4A825900F245E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = projectmeal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmeal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -488,6 +494,7 @@
 				0133F3771D4A825900F245E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0133F3781D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmealTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +503,7 @@
 				0133F37A1D4A825900F245E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0133F37B1D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmealUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,21 +512,9 @@
 				0133F37D1D4A825900F245E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0133F3541D4A825900F245E6 /* projectmeal.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0133F3551D4A825900F245E6 /* projectmeal.xcdatamodel */,
-			);
-			currentVersion = 0133F3551D4A825900F245E6 /* projectmeal.xcdatamodel */;
-			path = projectmeal.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0133F3421D4A825900F245E6 /* Project object */;
 }

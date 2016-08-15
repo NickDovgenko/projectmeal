@@ -5,22 +5,243 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Создание рецепта-->
+        <scene sceneID="1BM-4p-ZK5">
+            <objects>
+                <viewController title="Создание рецепта" id="y23-Ah-5wx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="plw-yO-XTK"/>
+                        <viewControllerLayoutGuide type="bottom" id="KDb-ih-Sza"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sdC-8z-MNY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="U2s-EQ-PIV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRx-Uu-VSb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="r3h-Bn-SSV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="DFB-8l-192">
+                                            <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                            <textAttributes key="titleTextAttributes">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </textAttributes>
+                                            <items>
+                                                <navigationItem title="Создание рецепта" id="oGk-qg-4N8">
+                                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="fnZ-GY-me5"/>
+                                                </navigationItem>
+                                            </items>
+                                        </navigationBar>
+                                    </subviews>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="DFB-8l-192" secondAttribute="trailing" id="fU4-Yh-I4y"/>
+                                        <constraint firstItem="DFB-8l-192" firstAttribute="top" secondItem="r3h-Bn-SSV" secondAttribute="top" constant="20" id="qeE-GK-JDX"/>
+                                        <constraint firstItem="DFB-8l-192" firstAttribute="leading" secondItem="r3h-Bn-SSV" secondAttribute="leading" id="ryL-Xg-Dtu"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="h3Z-Fu-ozj" appends="YES" id="wsF-xm-AFf"/>
+                                    </connections>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oRx-Uu-VSb" firstAttribute="top" secondItem="U2s-EQ-PIV" secondAttribute="top" id="9Ea-Zs-nzp"/>
+                            <constraint firstItem="U2s-EQ-PIV" firstAttribute="leading" secondItem="sdC-8z-MNY" secondAttribute="leading" id="P9F-NS-ec1"/>
+                            <constraint firstItem="oRx-Uu-VSb" firstAttribute="bottom" secondItem="KDb-ih-Sza" secondAttribute="top" id="UaX-zA-MGg"/>
+                            <constraint firstItem="U2s-EQ-PIV" firstAttribute="top" secondItem="sdC-8z-MNY" secondAttribute="top" id="YFY-EL-Qli"/>
+                            <constraint firstItem="oRx-Uu-VSb" firstAttribute="leading" secondItem="U2s-EQ-PIV" secondAttribute="leading" id="eok-yS-qQo"/>
+                            <constraint firstItem="oRx-Uu-VSb" firstAttribute="trailing" secondItem="U2s-EQ-PIV" secondAttribute="trailing" id="lbQ-7P-y0i"/>
+                            <constraint firstItem="U2s-EQ-PIV" firstAttribute="bottom" secondItem="KDb-ih-Sza" secondAttribute="top" id="mkw-2b-qpx"/>
+                            <constraint firstAttribute="trailing" secondItem="U2s-EQ-PIV" secondAttribute="trailing" id="wtO-om-z9P"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPQ-Y3-e0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="h3Z-Fu-ozj">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="3Bi-2A-CuE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-735.5" y="326.5"/>
+        </scene>
+        <!--Main view-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="projectmeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main view" id="BYZ-38-t0r" customClass="ViewController" customModule="projectmeal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="HZb-4X-iOr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mrE-zW-N7T" appends="YES" id="4eZ-pO-9Cj"/>
+                                    <outletCollection property="gestureRecognizers" destination="45p-Xt-iHQ" appends="YES" id="kAV-ac-sdn"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-VL-0vN">
+                                <rect key="frame" x="20" y="554" width="50" height="93"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="G8q-tx-bIj"/>
+                                    <constraint firstAttribute="height" constant="93" id="hqv-do-eUN"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DtA-iy-iOR" appends="YES" id="Los-17-ugZ"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0kP-gI-qvz">
+                                <rect key="frame" x="305" y="554" width="50" height="93"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="dY3-OK-BYa"/>
+                                    <constraint firstAttribute="height" constant="93" id="xRU-6E-5WD"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MN5-Df-l9Y" appends="YES" id="zCu-f4-Pom"/>
+                                </connections>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NY-xg9">
+                                <rect key="frame" x="186" y="554" width="100" height="81"/>
+                                <string key="text">Мои 
+рецепты</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Создание  рецепта" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-QZ-CD2">
+                                <rect key="frame" x="78" y="554" width="100" height="81"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rxi-NY-xg9" secondAttribute="bottom" constant="40" id="1Cb-ld-bVn"/>
+                            <constraint firstItem="HZb-4X-iOr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1tH-cW-EDg"/>
+                            <constraint firstItem="0kP-gI-qvz" firstAttribute="leading" secondItem="rxi-NY-xg9" secondAttribute="trailing" constant="5" id="2x2-fF-x4T"/>
+                            <constraint firstItem="HZb-4X-iOr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="44P-nW-3NB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0kP-gI-qvz" secondAttribute="bottom" constant="20" id="FSe-gJ-PWe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ukb-VL-0vN" secondAttribute="bottom" constant="20" id="GKx-cX-DDi"/>
+                            <constraint firstItem="ukb-VL-0vN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="LsX-MV-rRz"/>
+                            <constraint firstAttribute="trailing" secondItem="0kP-gI-qvz" secondAttribute="trailing" constant="20" id="MCf-Uh-DHl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i9J-QZ-CD2" secondAttribute="bottom" constant="40" id="NaF-gl-RGp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0kP-gI-qvz" secondAttribute="bottom" constant="20" id="QlD-v4-pGl"/>
+                            <constraint firstItem="HZb-4X-iOr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="XUj-VG-P2W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ukb-VL-0vN" secondAttribute="bottom" constant="20" id="eWB-8Q-9c1"/>
+                            <constraint firstItem="i9J-QZ-CD2" firstAttribute="leading" secondItem="ukb-VL-0vN" secondAttribute="trailing" constant="5" id="ewl-l8-ygY"/>
+                            <constraint firstAttribute="trailing" secondItem="HZb-4X-iOr" secondAttribute="trailing" id="wtT-M8-TDp"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WJg-VU-Ykx"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="ImageView" destination="ukb-VL-0vN" id="3fl-VL-hF9"/>
+                        <outlet property="ImageView2" destination="0kP-gI-qvz" id="fqS-FC-C2L"/>
+                    </connections>
                 </viewController>
+                <swipeGestureRecognizer direction="right" id="mrE-zW-N7T">
+                    <connections>
+                        <segue destination="y23-Ah-5wx" kind="presentation" modalTransitionStyle="crossDissolve" id="D4R-sG-T6e"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="45p-Xt-iHQ">
+                    <connections>
+                        <segue destination="sDs-uT-MnH" kind="presentation" modalTransitionStyle="crossDissolve" id="RvM-wf-O7O"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="DtA-iy-iOR">
+                    <connections>
+                        <segue destination="y23-Ah-5wx" kind="presentation" modalTransitionStyle="crossDissolve" id="xDd-2h-coT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="MN5-Df-l9Y">
+                    <connections>
+                        <segue destination="sDs-uT-MnH" kind="presentation" modalTransitionStyle="crossDissolve" id="mVA-wy-wul"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-113.5" y="326.5"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="gNu-Zq-8rF">
+            <objects>
+                <collectionViewController id="sDs-uT-MnH" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bEE-gb-UyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wOo-ZY-MP2">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <imageView key="backgroundView" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" id="YQt-VT-HUH">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="LAf-x9-0fG" appends="YES" id="72Z-nM-67o"/>
+                            </connections>
+                        </imageView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aRP-I9-Suo">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="sDs-uT-MnH" id="nn6-WY-9B1"/>
+                            <outlet property="delegate" destination="sDs-uT-MnH" id="kr4-1Z-b8T"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMX-Pd-bXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="LAf-x9-0fG">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="snU-aB-s08"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="465.5" y="326.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image2" width="360" height="640"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xDd-2h-coT"/>
+        <segue reference="3Bi-2A-CuE"/>
+        <segue reference="mVA-wy-wul"/>
+    </inferredMetricsTieBreakers>
 </document>
