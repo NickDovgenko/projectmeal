@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0133F3491D4A825900F245E6"
-               BuildableName = "projectmeal.app"
-               BlueprintName = "projectmeal"
-               ReferencedContainer = "container:projectmeal.xcodeproj">
+               BuildableName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.app"
+               BlueprintName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;"
+               ReferencedContainer = "container:&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0133F3601D4A825900F245E6"
-               BuildableName = "projectmealTests.xctest"
-               BlueprintName = "projectmealTests"
-               ReferencedContainer = "container:projectmeal.xcodeproj">
+               BuildableName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xctest"
+               BlueprintName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;Tests"
+               ReferencedContainer = "container:&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0133F36B1D4A825900F245E6"
-               BuildableName = "projectmealUITests.xctest"
-               BlueprintName = "projectmealUITests"
-               ReferencedContainer = "container:projectmeal.xcodeproj">
+               BuildableName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xctest"
+               BlueprintName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;UITests"
+               ReferencedContainer = "container:&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0133F3491D4A825900F245E6"
-            BuildableName = "projectmeal.app"
-            BlueprintName = "projectmeal"
-            ReferencedContainer = "container:projectmeal.xcodeproj">
+            BuildableName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.app"
+            BlueprintName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;"
+            ReferencedContainer = "container:&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0133F3491D4A825900F245E6"
-            BuildableName = "projectmeal.app"
-            BlueprintName = "projectmeal"
-            ReferencedContainer = "container:projectmeal.xcodeproj">
+            BuildableName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.app"
+            BlueprintName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;"
+            ReferencedContainer = "container:&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0133F3491D4A825900F245E6"
-            BuildableName = "projectmeal.app"
-            BlueprintName = "projectmeal"
-            ReferencedContainer = "container:projectmeal.xcodeproj">
+            BuildableName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.app"
+            BlueprintName = "&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;"
+            ReferencedContainer = "container:&#x41c;&#x43e;&#x438; &#x440;&#x435;&#x446;&#x435;&#x43f;&#x442;&#x44b;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

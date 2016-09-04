@@ -8,7 +8,7 @@
         <!--Создание рецепта-->
         <scene sceneID="1BM-4p-ZK5">
             <objects>
-                <viewController title="Создание рецепта" id="y23-Ah-5wx" sceneMemberID="viewController">
+                <viewController title="Создание рецепта" id="y23-Ah-5wx" customClass="CreatingRecipeController" customModule="Мои_рецепты" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="plw-yO-XTK"/>
                         <viewControllerLayoutGuide type="bottom" id="KDb-ih-Sza"/>
@@ -26,21 +26,48 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="DFB-8l-192">
+                                        <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="DFB-8l-192">
                                             <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                             <textAttributes key="titleTextAttributes">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </textAttributes>
                                             <items>
                                                 <navigationItem title="Создание рецепта" id="oGk-qg-4N8">
-                                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="fnZ-GY-me5"/>
+                                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="fnZ-GY-me5">
+                                                        <connections>
+                                                            <action selector="recipeSave:" destination="y23-Ah-5wx" id="VCR-un-Fgm"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                 </navigationItem>
                                             </items>
                                         </navigationBar>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="G21-tX-CQG">
+                                            <rect key="frame" x="5" y="69" width="100" height="100"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="KeS-HE-IjF"/>
+                                                <constraint firstAttribute="width" constant="100" id="dsW-Oy-bcb"/>
+                                            </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="CMv-r2-pqq" appends="YES" id="kPj-ft-y6k"/>
+                                            </connections>
+                                        </imageView>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="Zss-vR-hSR">
+                                            <rect key="frame" x="113" y="69" width="100" height="100"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="Uav-VJ-vZa"/>
+                                                <constraint firstAttribute="height" constant="100" id="uAT-s0-MLu"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <gestureRecognizers/>
                                     <constraints>
+                                        <constraint firstItem="Zss-vR-hSR" firstAttribute="top" secondItem="DFB-8l-192" secondAttribute="bottom" constant="5" id="K1i-ea-zaq"/>
+                                        <constraint firstItem="G21-tX-CQG" firstAttribute="leading" secondItem="r3h-Bn-SSV" secondAttribute="leading" constant="5" id="RZe-pT-2cO"/>
                                         <constraint firstAttribute="trailing" secondItem="DFB-8l-192" secondAttribute="trailing" id="fU4-Yh-I4y"/>
+                                        <constraint firstItem="G21-tX-CQG" firstAttribute="top" secondItem="DFB-8l-192" secondAttribute="bottom" constant="5" id="gOS-Am-dLi"/>
+                                        <constraint firstItem="Zss-vR-hSR" firstAttribute="leading" secondItem="G21-tX-CQG" secondAttribute="trailing" constant="8" id="pU6-Su-9bv"/>
                                         <constraint firstItem="DFB-8l-192" firstAttribute="top" secondItem="r3h-Bn-SSV" secondAttribute="top" constant="20" id="qeE-GK-JDX"/>
                                         <constraint firstItem="DFB-8l-192" firstAttribute="leading" secondItem="r3h-Bn-SSV" secondAttribute="leading" id="ryL-Xg-Dtu"/>
                                     </constraints>
@@ -66,6 +93,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="newImage" destination="G21-tX-CQG" id="Xjb-aW-z6c"/>
+                        <outlet property="newImage2" destination="Zss-vR-hSR" id="5Ik-JM-Rs7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPQ-Y3-e0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="h3Z-Fu-ozj">
@@ -73,13 +104,18 @@
                         <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="3Bi-2A-CuE"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="CMv-r2-pqq">
+                    <connections>
+                        <action selector="imagePick:" destination="y23-Ah-5wx" id="NWf-Sq-nss"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-735.5" y="326.5"/>
+            <point key="canvasLocation" x="-659.5" y="312.5"/>
         </scene>
         <!--Main view-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Main view" id="BYZ-38-t0r" customClass="ViewController" customModule="projectmeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main view" id="BYZ-38-t0r" customClass="ViewController" customModule="Мои_рецепты" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -119,16 +155,18 @@
                                     <outletCollection property="gestureRecognizers" destination="MN5-Df-l9Y" appends="YES" id="zCu-f4-Pom"/>
                                 </connections>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NY-xg9">
-                                <rect key="frame" x="186" y="554" width="100" height="81"/>
-                                <string key="text">Мои 
-рецепты</string>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-QZ-CD2">
+                                <rect key="frame" x="78" y="554" width="100" height="81"/>
+                                <string key="text">Создание
+ рецепта</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Создание  рецепта" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-QZ-CD2">
-                                <rect key="frame" x="78" y="554" width="100" height="81"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NY-xg9">
+                                <rect key="frame" x="191" y="554" width="100" height="81"/>
+                                <string key="text">Мои
+рецепты</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

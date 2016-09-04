@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0125663B1D58A136003085DA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0125663A1D58A136003085DA /* Info.plist */; };
+		0125985E1D7C518800FD3125 /* CreatingRecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0125985D1D7C518800FD3125 /* CreatingRecipeController.swift */; };
 		0133F34E1D4A825900F245E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F34D1D4A825900F245E6 /* AppDelegate.swift */; };
 		0133F3501D4A825900F245E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F34F1D4A825900F245E6 /* ViewController.swift */; };
 		0133F3531D4A825900F245E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133F3511D4A825900F245E6 /* Main.storyboard */; };
@@ -36,16 +37,17 @@
 
 /* Begin PBXFileReference section */
 		0125663A1D58A136003085DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0133F34A1D4A825900F245E6 /* projectmeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectmeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0125985D1D7C518800FD3125 /* CreatingRecipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingRecipeController.swift; sourceTree = "<group>"; };
+		0133F34A1D4A825900F245E6 /* Мои рецепты.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мои рецепты.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0133F34D1D4A825900F245E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0133F34F1D4A825900F245E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0133F3521D4A825900F245E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0133F3571D4A825900F245E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0133F35A1D4A825900F245E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0133F3611D4A825900F245E6 /* projectmealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectmealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0133F3611D4A825900F245E6 /* Мои рецепты.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Мои рецепты.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0133F3651D4A825900F245E6 /* projectmealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectmealTests.swift; sourceTree = "<group>"; };
 		0133F3671D4A825900F245E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0133F36C1D4A825900F245E6 /* projectmealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectmealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0133F36C1D4A825900F245E6 /* Мои рецепты.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Мои рецепты.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0133F3701D4A825900F245E6 /* projectmealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectmealUITests.swift; sourceTree = "<group>"; };
 		0133F3721D4A825900F245E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0125985C1D7C501800FD3125 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0133F34F1D4A825900F245E6 /* ViewController.swift */,
+				0125985D1D7C518800FD3125 /* CreatingRecipeController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		0133F3411D4A825900F245E6 = {
 			isa = PBXGroup;
 			children = (
@@ -88,9 +99,9 @@
 		0133F34B1D4A825900F245E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0133F34A1D4A825900F245E6 /* projectmeal.app */,
-				0133F3611D4A825900F245E6 /* projectmealTests.xctest */,
-				0133F36C1D4A825900F245E6 /* projectmealUITests.xctest */,
+				0133F34A1D4A825900F245E6 /* Мои рецепты.app */,
+				0133F3611D4A825900F245E6 /* Мои рецепты.xctest */,
+				0133F36C1D4A825900F245E6 /* Мои рецепты.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,8 +109,8 @@
 		0133F34C1D4A825900F245E6 /* projectmeal */ = {
 			isa = PBXGroup;
 			children = (
+				0125985C1D7C501800FD3125 /* ViewControllers */,
 				0133F34D1D4A825900F245E6 /* AppDelegate.swift */,
-				0133F34F1D4A825900F245E6 /* ViewController.swift */,
 				0133F3511D4A825900F245E6 /* Main.storyboard */,
 				0133F3571D4A825900F245E6 /* Assets.xcassets */,
 				0133F3591D4A825900F245E6 /* LaunchScreen.storyboard */,
@@ -129,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0133F3491D4A825900F245E6 /* projectmeal */ = {
+		0133F3491D4A825900F245E6 /* Мои рецепты */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0133F3751D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmeal" */;
+			buildConfigurationList = 0133F3751D4A825900F245E6 /* Build configuration list for PBXNativeTarget "Мои рецепты" */;
 			buildPhases = (
 				0133F3461D4A825900F245E6 /* Sources */,
 				0133F3471D4A825900F245E6 /* Frameworks */,
@@ -141,14 +152,14 @@
 			);
 			dependencies = (
 			);
-			name = projectmeal;
+			name = "Мои рецепты";
 			productName = projectmeal;
-			productReference = 0133F34A1D4A825900F245E6 /* projectmeal.app */;
+			productReference = 0133F34A1D4A825900F245E6 /* Мои рецепты.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0133F3601D4A825900F245E6 /* projectmealTests */ = {
+		0133F3601D4A825900F245E6 /* Мои рецептыTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0133F3781D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmealTests" */;
+			buildConfigurationList = 0133F3781D4A825900F245E6 /* Build configuration list for PBXNativeTarget "Мои рецептыTests" */;
 			buildPhases = (
 				0133F35D1D4A825900F245E6 /* Sources */,
 				0133F35E1D4A825900F245E6 /* Frameworks */,
@@ -159,14 +170,14 @@
 			dependencies = (
 				0133F3631D4A825900F245E6 /* PBXTargetDependency */,
 			);
-			name = projectmealTests;
+			name = "Мои рецептыTests";
 			productName = projectmealTests;
-			productReference = 0133F3611D4A825900F245E6 /* projectmealTests.xctest */;
+			productReference = 0133F3611D4A825900F245E6 /* Мои рецепты.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0133F36B1D4A825900F245E6 /* projectmealUITests */ = {
+		0133F36B1D4A825900F245E6 /* Мои рецептыUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0133F37B1D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmealUITests" */;
+			buildConfigurationList = 0133F37B1D4A825900F245E6 /* Build configuration list for PBXNativeTarget "Мои рецептыUITests" */;
 			buildPhases = (
 				0133F3681D4A825900F245E6 /* Sources */,
 				0133F3691D4A825900F245E6 /* Frameworks */,
@@ -177,9 +188,9 @@
 			dependencies = (
 				0133F36E1D4A825900F245E6 /* PBXTargetDependency */,
 			);
-			name = projectmealUITests;
+			name = "Мои рецептыUITests";
 			productName = projectmealUITests;
-			productReference = 0133F36C1D4A825900F245E6 /* projectmealUITests.xctest */;
+			productReference = 0133F36C1D4A825900F245E6 /* Мои рецепты.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0133F3451D4A825900F245E6 /* Build configuration list for PBXProject "projectmeal" */;
+			buildConfigurationList = 0133F3451D4A825900F245E6 /* Build configuration list for PBXProject "Мои рецепты" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -222,9 +233,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0133F3491D4A825900F245E6 /* projectmeal */,
-				0133F3601D4A825900F245E6 /* projectmealTests */,
-				0133F36B1D4A825900F245E6 /* projectmealUITests */,
+				0133F3491D4A825900F245E6 /* Мои рецепты */,
+				0133F3601D4A825900F245E6 /* Мои рецептыTests */,
+				0133F36B1D4A825900F245E6 /* Мои рецептыUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0133F3501D4A825900F245E6 /* ViewController.swift in Sources */,
+				0125985E1D7C518800FD3125 /* CreatingRecipeController.swift in Sources */,
 				0133F34E1D4A825900F245E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,12 +300,12 @@
 /* Begin PBXTargetDependency section */
 		0133F3631D4A825900F245E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0133F3491D4A825900F245E6 /* projectmeal */;
+			target = 0133F3491D4A825900F245E6 /* Мои рецепты */;
 			targetProxy = 0133F3621D4A825900F245E6 /* PBXContainerItemProxy */;
 		};
 		0133F36E1D4A825900F245E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0133F3491D4A825900F245E6 /* projectmeal */;
+			target = 0133F3491D4A825900F245E6 /* Мои рецепты */;
 			targetProxy = 0133F36D1D4A825900F245E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -406,12 +418,14 @@
 		0133F3761D4A825900F245E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = projectmeal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmeal";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Мои рецепты";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -419,12 +433,14 @@
 		0133F3771D4A825900F245E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = projectmeal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmeal";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Мои рецепты";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -436,8 +452,8 @@
 				INFOPLIST_FILE = projectmealTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/projectmeal.app/projectmeal";
+				PRODUCT_NAME = "Мои рецепты";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Мои рецепты.app/Мои рецепты";
 			};
 			name = Debug;
 		};
@@ -448,8 +464,8 @@
 				INFOPLIST_FILE = projectmealTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/projectmeal.app/projectmeal";
+				PRODUCT_NAME = "Мои рецепты";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Мои рецепты.app/Мои рецепты";
 			};
 			name = Release;
 		};
@@ -459,7 +475,7 @@
 				INFOPLIST_FILE = projectmealUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Мои рецепты";
 				TEST_TARGET_NAME = projectmeal;
 			};
 			name = Debug;
@@ -470,7 +486,7 @@
 				INFOPLIST_FILE = projectmealUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Мои рецепты";
 				TEST_TARGET_NAME = projectmeal;
 			};
 			name = Release;
@@ -478,7 +494,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0133F3451D4A825900F245E6 /* Build configuration list for PBXProject "projectmeal" */ = {
+		0133F3451D4A825900F245E6 /* Build configuration list for PBXProject "Мои рецепты" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0133F3731D4A825900F245E6 /* Debug */,
@@ -487,7 +503,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0133F3751D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmeal" */ = {
+		0133F3751D4A825900F245E6 /* Build configuration list for PBXNativeTarget "Мои рецепты" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0133F3761D4A825900F245E6 /* Debug */,
@@ -496,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0133F3781D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmealTests" */ = {
+		0133F3781D4A825900F245E6 /* Build configuration list for PBXNativeTarget "Мои рецептыTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0133F3791D4A825900F245E6 /* Debug */,
@@ -505,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0133F37B1D4A825900F245E6 /* Build configuration list for PBXNativeTarget "projectmealUITests" */ = {
+		0133F37B1D4A825900F245E6 /* Build configuration list for PBXNativeTarget "Мои рецептыUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0133F37C1D4A825900F245E6 /* Debug */,

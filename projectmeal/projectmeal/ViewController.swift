@@ -8,15 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
     
+    //Работа с Image
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var ImageView2: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //Анимация стрелок на главном экране
+        
         //Левая стрелка
         ImageView.animationImages = [UIImage(named: "Image1-4")!,UIImage(named: "Image1-5")!,UIImage(named: "Image1-6")!,UIImage(named: "Image1-7")!,UIImage(named: "Image1-7")!,UIImage(named: "Image1-6")!,UIImage(named: "Image1-5")!,UIImage(named: "Image1-4")!]
         ImageView.animationDuration = 1.2
@@ -36,7 +40,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
