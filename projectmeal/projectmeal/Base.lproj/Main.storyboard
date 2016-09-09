@@ -41,33 +41,126 @@
                                                 </navigationItem>
                                             </items>
                                         </navigationBar>
-                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="G21-tX-CQG">
-                                            <rect key="frame" x="5" y="69" width="100" height="100"/>
-                                            <gestureRecognizers/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Добавить фото рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrA-zJ-5Ws">
+                                            <rect key="frame" x="91" y="69" width="191" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQL-mT-1bJ">
+                                            <rect key="frame" x="0.0" y="98" width="375" height="120"/>
+                                            <subviews>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="G21-tX-CQG">
+                                                    <rect key="frame" x="116" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="KeS-HE-IjF"/>
+                                                        <constraint firstAttribute="width" constant="100" id="dsW-Oy-bcb"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="CMv-r2-pqq" appends="YES" id="kPj-ft-y6k"/>
+                                                    </connections>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="Zss-vR-hSR">
+                                                    <rect key="frame" x="8" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Uav-VJ-vZa"/>
+                                                        <constraint firstAttribute="height" constant="100" id="uAT-s0-MLu"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="dkb-o9-crc" appends="YES" id="GEB-AO-tff"/>
+                                                    </connections>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="4Au-po-7k7">
+                                                    <rect key="frame" x="332" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="j3d-JI-fyi"/>
+                                                        <constraint firstAttribute="height" constant="100" id="pDI-U6-HEU"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="xIa-8y-4Fh">
+                                                    <rect key="frame" x="224" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="Sg8-Q4-4Oc"/>
+                                                        <constraint firstAttribute="width" constant="100" id="p2w-8y-0Yo"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="fKJ-G0-Du0">
+                                                    <rect key="frame" x="548" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="T5D-bE-B4d"/>
+                                                        <constraint firstAttribute="width" constant="100" id="zfQ-hP-pGY"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="ojQ-8Z-KYd">
+                                                    <rect key="frame" x="440" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="mrM-Es-JC7"/>
+                                                        <constraint firstAttribute="height" constant="100" id="vve-3U-dgX"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="1j5-MM-c2E">
+                                                    <rect key="frame" x="764" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="0jU-Hp-e4p"/>
+                                                        <constraint firstAttribute="width" constant="100" id="hMO-dZ-wKy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="iHN-Wf-OIs">
+                                                    <rect key="frame" x="656" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="Ef5-yz-lIP"/>
+                                                        <constraint firstAttribute="width" constant="100" id="Tnv-lY-P4c"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="o1r-tk-AJm">
+                                                    <rect key="frame" x="872" y="10" width="100" height="100"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="GHL-I1-sAZ"/>
+                                                        <constraint firstAttribute="height" constant="100" id="tdd-p0-ayn"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="KeS-HE-IjF"/>
-                                                <constraint firstAttribute="width" constant="100" id="dsW-Oy-bcb"/>
+                                                <constraint firstItem="fKJ-G0-Du0" firstAttribute="leading" secondItem="ojQ-8Z-KYd" secondAttribute="trailing" constant="5" id="2nU-Gz-z5T"/>
+                                                <constraint firstItem="ojQ-8Z-KYd" firstAttribute="leading" secondItem="4Au-po-7k7" secondAttribute="trailing" constant="5" id="6N6-Ny-z5p"/>
+                                                <constraint firstItem="o1r-tk-AJm" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="Aib-Yb-Yek"/>
+                                                <constraint firstItem="4Au-po-7k7" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="Lzr-RI-gUJ"/>
+                                                <constraint firstItem="xIa-8y-4Fh" firstAttribute="leading" secondItem="G21-tX-CQG" secondAttribute="trailing" constant="5" id="OjI-t7-3vs"/>
+                                                <constraint firstItem="G21-tX-CQG" firstAttribute="leading" secondItem="Zss-vR-hSR" secondAttribute="trailing" constant="5" id="Qw6-yu-VKN"/>
+                                                <constraint firstItem="iHN-Wf-OIs" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="Uq5-yU-Hoz"/>
+                                                <constraint firstItem="xIa-8y-4Fh" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="Xhz-fS-ipw"/>
+                                                <constraint firstItem="fKJ-G0-Du0" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="Yo3-Yg-l6y"/>
+                                                <constraint firstItem="1j5-MM-c2E" firstAttribute="leading" secondItem="iHN-Wf-OIs" secondAttribute="trailing" constant="5" id="Ysr-ly-xIA"/>
+                                                <constraint firstItem="G21-tX-CQG" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="aM2-7g-CVR"/>
+                                                <constraint firstItem="Zss-vR-hSR" firstAttribute="leading" secondItem="UQL-mT-1bJ" secondAttribute="leading" constant="5" id="ax8-kr-pkI"/>
+                                                <constraint firstItem="Zss-vR-hSR" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="eko-ag-Q81"/>
+                                                <constraint firstAttribute="height" constant="120" id="kmW-Ht-0mV"/>
+                                                <constraint firstItem="1j5-MM-c2E" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="m0M-i5-fwy"/>
+                                                <constraint firstItem="iHN-Wf-OIs" firstAttribute="leading" secondItem="fKJ-G0-Du0" secondAttribute="trailing" constant="5" id="pXx-G0-1na"/>
+                                                <constraint firstItem="o1r-tk-AJm" firstAttribute="leading" secondItem="1j5-MM-c2E" secondAttribute="trailing" constant="5" id="uSf-7t-Xop"/>
+                                                <constraint firstItem="4Au-po-7k7" firstAttribute="leading" secondItem="xIa-8y-4Fh" secondAttribute="trailing" constant="5" id="yHb-HB-a55"/>
+                                                <constraint firstAttribute="trailing" secondItem="o1r-tk-AJm" secondAttribute="trailing" constant="5" id="z9M-Lw-VIW"/>
+                                                <constraint firstItem="ojQ-8Z-KYd" firstAttribute="top" secondItem="UQL-mT-1bJ" secondAttribute="top" constant="5" id="zPJ-hh-mmV"/>
                                             </constraints>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="CMv-r2-pqq" appends="YES" id="kPj-ft-y6k"/>
-                                            </connections>
-                                        </imageView>
-                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="Zss-vR-hSR">
-                                            <rect key="frame" x="113" y="69" width="100" height="100"/>
-                                            <gestureRecognizers/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="Uav-VJ-vZa"/>
-                                                <constraint firstAttribute="height" constant="100" id="uAT-s0-MLu"/>
-                                            </constraints>
-                                        </imageView>
+                                        </scrollView>
                                     </subviews>
                                     <gestureRecognizers/>
                                     <constraints>
-                                        <constraint firstItem="Zss-vR-hSR" firstAttribute="top" secondItem="DFB-8l-192" secondAttribute="bottom" constant="5" id="K1i-ea-zaq"/>
-                                        <constraint firstItem="G21-tX-CQG" firstAttribute="leading" secondItem="r3h-Bn-SSV" secondAttribute="leading" constant="5" id="RZe-pT-2cO"/>
+                                        <constraint firstItem="UQL-mT-1bJ" firstAttribute="top" secondItem="OrA-zJ-5Ws" secondAttribute="bottom" constant="8" id="9Jz-HY-wjG"/>
+                                        <constraint firstAttribute="trailing" secondItem="UQL-mT-1bJ" secondAttribute="trailing" id="N19-jF-Njd"/>
+                                        <constraint firstItem="UQL-mT-1bJ" firstAttribute="leading" secondItem="r3h-Bn-SSV" secondAttribute="leading" id="QIe-cf-qCa"/>
+                                        <constraint firstItem="OrA-zJ-5Ws" firstAttribute="centerX" secondItem="r3h-Bn-SSV" secondAttribute="centerX" id="f4D-Uy-tzd"/>
                                         <constraint firstAttribute="trailing" secondItem="DFB-8l-192" secondAttribute="trailing" id="fU4-Yh-I4y"/>
-                                        <constraint firstItem="G21-tX-CQG" firstAttribute="top" secondItem="DFB-8l-192" secondAttribute="bottom" constant="5" id="gOS-Am-dLi"/>
-                                        <constraint firstItem="Zss-vR-hSR" firstAttribute="leading" secondItem="G21-tX-CQG" secondAttribute="trailing" constant="8" id="pU6-Su-9bv"/>
+                                        <constraint firstItem="OrA-zJ-5Ws" firstAttribute="top" secondItem="DFB-8l-192" secondAttribute="bottom" constant="5" id="piZ-16-wLo"/>
                                         <constraint firstItem="DFB-8l-192" firstAttribute="top" secondItem="r3h-Bn-SSV" secondAttribute="top" constant="20" id="qeE-GK-JDX"/>
                                         <constraint firstItem="DFB-8l-192" firstAttribute="leading" secondItem="r3h-Bn-SSV" secondAttribute="leading" id="ryL-Xg-Dtu"/>
                                     </constraints>
@@ -109,8 +202,13 @@
                         <action selector="imagePick:" destination="y23-Ah-5wx" id="NWf-Sq-nss"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="dkb-o9-crc">
+                    <connections>
+                        <action selector="imagePickTwo:" destination="y23-Ah-5wx" id="Kgs-9x-YX9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-659.5" y="312.5"/>
+            <point key="canvasLocation" x="-694.5" y="326.5"/>
         </scene>
         <!--Main view-->
         <scene sceneID="tne-QT-ifu">
@@ -155,16 +253,16 @@
                                     <outletCollection property="gestureRecognizers" destination="MN5-Df-l9Y" appends="YES" id="zCu-f4-Pom"/>
                                 </connections>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-QZ-CD2">
-                                <rect key="frame" x="78" y="554" width="100" height="81"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-QZ-CD2">
+                                <rect key="frame" x="75" y="572.5" width="84.5" height="54.5"/>
                                 <string key="text">Создание
  рецепта</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NY-xg9">
-                                <rect key="frame" x="191" y="554" width="100" height="81"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NY-xg9">
+                                <rect key="frame" x="225" y="572.5" width="75" height="54.5"/>
                                 <string key="text">Мои
 рецепты</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,10 +373,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Camera-100" width="100" height="100"/>
         <image name="Image2" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xDd-2h-coT"/>
+        <segue reference="D4R-sG-T6e"/>
         <segue reference="3Bi-2A-CuE"/>
         <segue reference="mVA-wy-wul"/>
     </inferredMetricsTieBreakers>
