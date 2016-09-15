@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0125663B1D58A136003085DA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0125663A1D58A136003085DA /* Info.plist */; };
 		0125985E1D7C518800FD3125 /* CreatingRecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0125985D1D7C518800FD3125 /* CreatingRecipeController.swift */; };
 		0133F34E1D4A825900F245E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F34D1D4A825900F245E6 /* AppDelegate.swift */; };
 		0133F3501D4A825900F245E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F34F1D4A825900F245E6 /* ViewController.swift */; };
@@ -203,19 +202,22 @@
 					"Создание рецепта",
 				);
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Nick;
 				TargetAttributes = {
 					0133F3491D4A825900F245E6 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3CCK54YKGM;
+						LastSwiftMigration = 0800;
 					};
 					0133F3601D4A825900F245E6 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 0133F3491D4A825900F245E6;
 					};
 					0133F36B1D4A825900F245E6 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 0133F3491D4A825900F245E6;
 					};
 				};
@@ -245,7 +247,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0125663B1D58A136003085DA /* Info.plist in Resources */,
 				0133F35B1D4A825900F245E6 /* LaunchScreen.storyboard in Resources */,
 				0133F3581D4A825900F245E6 /* Assets.xcassets in Resources */,
 				0133F3531D4A825900F245E6 /* Main.storyboard in Resources */,
@@ -344,8 +345,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -390,8 +393,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -410,6 +415,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -427,6 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmeal";
 				PRODUCT_NAME = "Мои рецепты";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -442,6 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmeal";
 				PRODUCT_NAME = "Мои рецепты";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -453,6 +461,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealTests";
 				PRODUCT_NAME = "Мои рецепты";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Мои рецепты.app/Мои рецепты";
 			};
 			name = Debug;
@@ -465,6 +474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealTests";
 				PRODUCT_NAME = "Мои рецепты";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Мои рецепты.app/Мои рецепты";
 			};
 			name = Release;
@@ -476,6 +486,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealUITests";
 				PRODUCT_NAME = "Мои рецепты";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = projectmeal;
 			};
 			name = Debug;
@@ -487,6 +498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dovgenko-inc.projectmealUITests";
 				PRODUCT_NAME = "Мои рецепты";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = projectmeal;
 			};
 			name = Release;

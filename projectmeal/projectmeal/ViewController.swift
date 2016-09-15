@@ -18,6 +18,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.shared.statusBarStyle = .lightContent
         
         //Анимация стрелок на главном экране
         
@@ -31,7 +32,13 @@ class ViewController: UIViewController{
         ImageView2.animationDuration = 1.2
         ImageView2.startAnimating()
         
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 
     
@@ -43,3 +50,13 @@ class ViewController: UIViewController{
 
 }
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
