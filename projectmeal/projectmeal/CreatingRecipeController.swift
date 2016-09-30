@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITextViewDelegate {
+class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     var imageNum = 0
     @IBOutlet weak var newImage: UIImageView!
@@ -20,14 +20,12 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var newImage7: UIImageView!
     @IBOutlet weak var newImage8: UIImageView!
     @IBOutlet weak var newImage9: UIImageView!
-    
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-
-    
     @IBOutlet weak var textLabel: UITextField!
     @IBOutlet weak var mealList: UIPickerView!
     @IBOutlet weak var preparingMeal: UITextView!
     @IBOutlet weak var mealNotes: UITextView!
+    @IBOutlet weak var mealIngredients: UITextView!
+    @IBOutlet weak var mealIngredientsNum: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +33,8 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         mealList.delegate = self
         textLabel.delegate = self
         
-        
         //Рамка текстовых полей
+        
         preparingMeal.layer.borderColor = UIColor.white.cgColor
         preparingMeal.layer.borderWidth = 1.0
         preparingMeal.layer.cornerRadius = 5
@@ -45,7 +43,16 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         mealNotes.layer.borderWidth = 1.0
         mealNotes.layer.cornerRadius = 5
         
+        mealIngredients.layer.borderColor = UIColor.white.cgColor
+        mealIngredients.layer.borderWidth = 1.0
+        mealIngredients.layer.cornerRadius = 5
+        
+        mealIngredientsNum.layer.borderColor = UIColor.white.cgColor
+        mealIngredientsNum.layer.borderWidth = 1.0
+        mealIngredientsNum.layer.cornerRadius = 5
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         //Dismiss keyboard
@@ -58,18 +65,12 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         super.didReceiveMemoryWarning()
     }
     
-        //Сохранение рецепта
-    
-    @IBAction func recipeSave(_ sender: UIBarButtonItem)
-    {
-        
-    }
         //  UIImagePickerControllerDelegate
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // Dismiss the picker if the user canceled.
         dismiss(animated: true, completion: nil)
     }
-        //Обработка нажатий на фото
+        //  Обработка нажатий на фото
     @IBAction func imagePick(_ sender: UITapGestureRecognizer) {
         self.imageImport()
         imageNum = 1
@@ -165,9 +166,6 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         }
             dismiss(animated: true, completion: nil)
     }
-    //UITableView
-    
-    
     
     //Data picker
     
@@ -185,18 +183,14 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         return mealListPicker[row]
     }
     
-    
-    
-    
     //Работа с текстом
     
     //Скрыть клавиатуру
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.animateViewMoving(up: true, moveValue: 216)
         textLabel.resignFirstResponder()
-        preparingMeal.resignFirstResponder()
         return true
     }
-    
     
     //Подъем текста вверх на высоту клавиатуры
     
@@ -206,7 +200,7 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     func textFieldDidEndEditing(_ textField: UITextField) {
         animateViewMoving(up: false, moveValue: 100)
     }
-    
+
     func animateViewMoving (up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3
         let movement:CGFloat = ( up ? -moveValue : moveValue)
@@ -216,6 +210,7 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
         UIView.commitAnimations()
     }
+    
     func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -223,8 +218,8 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
                 self.view.frame.origin.y -= keyboardSize.height
             }
         }
-        
     }
+    
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
@@ -233,4 +228,10 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
+    //Сохранение рецепта
+    
+    @IBAction func recipeSave(_ sender: UIBarButtonItem)
+    {
+        
+    }
 }

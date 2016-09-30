@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class MainViewController: UIViewController{
     
     //Работа с Image
     @IBOutlet weak var ImageView: UIImageView!
@@ -41,8 +41,6 @@ class ViewController: UIViewController{
         return UIStatusBarStyle.lightContent
     }
 
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,13 +48,13 @@ class ViewController: UIViewController{
 
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
+    extension UIViewController {
+        func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-    }
+        }
     
-    func dismissKeyboard() {
+        func dismissKeyboard() {
         view.endEditing(true)
+        }
     }
-}
