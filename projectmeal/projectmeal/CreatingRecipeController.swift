@@ -11,6 +11,7 @@ import UIKit
 class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     var imageNum = 0
+    
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var newImage2: UIImageView!
     @IBOutlet weak var newImage3: UIImageView!
@@ -26,6 +27,7 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var mealNotes: UITextView!
     @IBOutlet weak var mealIngredients: UITextView!
     @IBOutlet weak var mealIngredientsNum: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +53,14 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         mealIngredientsNum.layer.borderWidth = 1.0
         mealIngredientsNum.layer.cornerRadius = 5
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+        //
+     
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+
         //Dismiss keyboard
         self.hideKeyboardWhenTappedAround()
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,6 +126,7 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     
     
         //Вывод фото из галереи
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         
@@ -185,53 +188,67 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     
     //Работа с текстом
     
-    //Скрыть клавиатуру
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.animateViewMoving(up: true, moveValue: 216)
         textLabel.resignFirstResponder()
         return true
     }
-    
-    //Подъем текста вверх на высоту клавиатуры
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        animateViewMoving(up: true, moveValue: 100)
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        animateViewMoving(up: false, moveValue: 100)
-    }
 
-    func animateViewMoving (up:Bool, moveValue :CGFloat){
-        let movementDuration:TimeInterval = 0.3
-        let movement:CGFloat = ( up ? -moveValue : moveValue)
+    func keyboardWillShow(notification:NSNotification) {
+        
+        ViewUpanimateMoving(up: true, upValue: 100)
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset: UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        self.scrollView.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        
+        ViewUpanimateMoving(up: false, upValue: 100)
+        let contentInset: UIEdgeInsets = UIEdgeInsets()
+        self.scrollView.contentInset = contentInset
+    }
+    
+    func ViewUpanimateMoving (up:Bool, upValue :CGFloat){
+        let durationMovement:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -upValue : upValue)
         UIView.beginAnimations( "animateView", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(movementDuration )
+        UIView.setAnimationDuration(durationMovement)
         self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
         UIView.commitAnimations()
     }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
-    
     //Сохранение рецепта
     
     @IBAction func recipeSave(_ sender: UIBarButtonItem)
     {
+        //Фото рецепта
+        let photo1 = newImage
+        let photo2 = newImage2
+        let photo3 = newImage3
+        let photo4 = newImage4
+        let photo5 = newImage5
+        let photo6 = newImage6
+        let photo7 = newImage7
+        let photo8 = newImage8
+        let photo9 = newImage9
         
+        //Текстовые поля
+        let name = textLabel.text
+        let cooking = preparingMeal.text
+        let ingredient = mealIngredients.text
+        let ingredientNum = mealIngredientsNum.text
+        let note = mealNotes.text
+        
+        //Проверка введенного текста
+        if name == "" {
+            let alertController = UIAlertController(title: "Ошибка", message: "Пустое поле: 'Название рецепта' ", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    
     }
 }

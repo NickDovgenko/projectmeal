@@ -48,6 +48,10 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Разрешите доступ, чтобы можно было добавить фото к рецепту</string>
+	<string>Разрешите доступ, чтобы добавить фото к рецепту</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OwnHand.ttf</string>
+	</array>
 </dict>
 </plist>

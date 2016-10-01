@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController{
     
-    //Работа с Image
+    //Работа с анимацией
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var ImageView2: UIImageView!
     
@@ -18,6 +18,8 @@ class MainViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //Белый статус бар
         UIApplication.shared.statusBarStyle = .lightContent
         
         //Анимация стрелок на главном экране
@@ -32,9 +34,6 @@ class MainViewController: UIViewController{
         ImageView2.animationDuration = 1.2
         ImageView2.startAnimating()
         
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -43,7 +42,6 @@ class MainViewController: UIViewController{
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

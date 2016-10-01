@@ -3,8 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OwnHand.ttf">
+            <string>OwnHand</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Создание рецепта-->
         <scene sceneID="1BM-4p-ZK5">
@@ -201,7 +207,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="AZU-us-91r"/>
+                                                        <constraint firstAttribute="height" constant="170" id="AZU-us-91r"/>
                                                     </constraints>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -211,7 +217,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="rnt-Jn-Eqa"/>
+                                                        <constraint firstAttribute="width" secondItem="BOa-NY-Skj" secondAttribute="height" multiplier="41:23" id="GJC-ff-TuV"/>
                                                     </constraints>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -327,6 +333,7 @@
                         <outlet property="newImage8" destination="1j5-MM-c2E" id="eng-a3-bW1"/>
                         <outlet property="newImage9" destination="o1r-tk-AJm" id="Lp3-9i-n2P"/>
                         <outlet property="preparingMeal" destination="BBZ-hO-RGY" id="hBy-Gm-TH0"/>
+                        <outlet property="scrollView" destination="uN3-NM-abX" id="u3d-Xl-NcJ"/>
                         <outlet property="textLabel" destination="CDb-hu-4AP" id="hT4-u8-sME"/>
                     </connections>
                 </viewController>
@@ -382,7 +389,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-927.20000000000005" y="324.28785607196403"/>
+            <point key="canvasLocation" x="-927.53906249999989" y="324.15812591508052"/>
         </scene>
         <!--Main view-->
         <scene sceneID="tne-QT-ifu">
@@ -428,14 +435,14 @@
                                 <string key="text">Создание
  рецепта</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OwnHand" family="OwnHand" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NY-xg9">
                                 <string key="text">Мои
 рецепты</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OwnHand" family="OwnHand" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
