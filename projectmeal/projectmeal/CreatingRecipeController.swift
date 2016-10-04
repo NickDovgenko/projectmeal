@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     var imageNum = 0
+    var selectedRow = String()
+    var recipe: Recipe!
     
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var newImage2: UIImageView!
@@ -31,6 +34,7 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         mealList.dataSource = self
         mealList.delegate = self
         textLabel.delegate = self
@@ -186,7 +190,12 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         return mealListPicker[row]
     }
     
-    //Работа с текстом
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            selectedRow = mealListPicker[row]
+        
+    }
+    
+    //Работа с клавиатурой
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textLabel.resignFirstResponder()
@@ -212,8 +221,10 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         self.scrollView.contentInset = contentInset
     }
     
+    // Анимация
+    
     func ViewUpanimateMoving (up:Bool, upValue :CGFloat){
-        let durationMovement:TimeInterval = 0.3
+        let durationMovement:TimeInterval = 0.4
         let movement:CGFloat = ( up ? -upValue : upValue)
         UIView.beginAnimations( "animateView", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
@@ -221,33 +232,84 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
         UIView.commitAnimations()
     }
+    
     //Сохранение рецепта
     
     @IBAction func recipeSave(_ sender: UIBarButtonItem)
     {
-        //Фото рецепта
-        let photo1 = newImage
-        let photo2 = newImage2
-        let photo3 = newImage3
-        let photo4 = newImage4
-        let photo5 = newImage5
-        let photo6 = newImage6
-        let photo7 = newImage7
-        let photo8 = newImage8
-        let photo9 = newImage9
         
         //Текстовые поля
+        
         let name = textLabel.text
         let cooking = preparingMeal.text
         let ingredient = mealIngredients.text
         let ingredientNum = mealIngredientsNum.text
         let note = mealNotes.text
+        var type = ""
+        if selectedRow == "" {
+            type = "Первые блюда"
+        }
+        else {
+            type = selectedRow
+        }
+        
         
         //Проверка введенного текста
+        
         if name == "" {
             let alertController = UIAlertController(title: "Ошибка", message: "Пустое поле: 'Название рецепта' ", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        //Сохрание в Core Data
+        
+        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+            recipe = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: managedObjectContext) as! Recipe
+            
+            recipe.name = name!
+            recipe.type = type
+            recipe.ingredient = ingredient
+            recipe.ingredintNum = ingredientNum
+            recipe.cooking = cooking
+            recipe.note = note
+            if let recipePhoto = newImage.image {
+                recipe.photo1 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage2.image {
+                recipe.photo2 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage3.image {
+                recipe.photo3 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage4.image {
+                recipe.photo4 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage5.image {
+                recipe.photo5 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage6.image {
+                recipe.photo6 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage7.image {
+                recipe.photo7 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage8.image {
+                recipe.photo8 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+            if let recipePhoto = newImage9.image {
+                recipe.photo9 = UIImagePNGRepresentation(recipePhoto) as NSData?
+            }
+        
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print(error)
+                return
+            }
+            
+            
         }
     
     }

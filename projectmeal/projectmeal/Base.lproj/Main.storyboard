@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -481,7 +482,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="45p-Xt-iHQ">
                     <connections>
-                        <segue destination="sDs-uT-MnH" kind="presentation" modalTransitionStyle="crossDissolve" id="RvM-wf-O7O"/>
+                        <segue destination="tym-30-jtQ" kind="presentation" modalTransitionStyle="crossDissolve" id="rRn-bR-4FN"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="DtA-iy-iOR">
@@ -491,57 +492,117 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="MN5-Df-l9Y">
                     <connections>
-                        <segue destination="sDs-uT-MnH" kind="presentation" modalTransitionStyle="crossDissolve" id="mVA-wy-wul"/>
+                        <segue destination="tym-30-jtQ" kind="presentation" modalTransitionStyle="crossDissolve" id="Tez-dc-IPM"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-113.5" y="326.5"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="gNu-Zq-8rF">
+        <!--CollectionViewController-->
+        <scene sceneID="LQn-qg-JBW">
             <objects>
-                <collectionViewController id="sDs-uT-MnH" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bEE-gb-UyZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wOo-ZY-MP2">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <imageView key="backgroundView" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" id="YQt-VT-HUH">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <gestureRecognizers/>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="LAf-x9-0fG" appends="YES" id="72Z-nM-67o"/>
-                            </connections>
-                        </imageView>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aRP-I9-Suo">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="sDs-uT-MnH" id="nn6-WY-9B1"/>
-                            <outlet property="delegate" destination="sDs-uT-MnH" id="kr4-1Z-b8T"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gMX-Pd-bXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="LAf-x9-0fG">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N8s-ie-i57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="mpf-qm-mLh">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="snU-aB-s08"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="QIg-I0-ofb"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tym-30-jtQ" userLabel="CollectionViewController" customClass="RecipeCollection" customModule="Мои_рецепты" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nWj-Fr-TTv"/>
+                        <viewControllerLayoutGuide type="bottom" id="nMp-SN-9eH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k2Z-ud-GPz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="3pq-lL-V7R"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9T-OQ-JCZ">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dlO-If-4qD">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NrZ-NS-0ZC">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eLX-3g-R5b">
+                                                <size key="itemSize" width="145" height="145"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="e2Z-pA-Bii" customClass="RecipeCollectionViewCell" customModule="Мои_рецепты" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-GU-Quc">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="eaS-tP-rwe">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="100" id="Nvm-1a-fw5"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="k6y-2a-EVX"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="eaS-tP-rwe" firstAttribute="top" secondItem="e2Z-pA-Bii" secondAttribute="top" constant="17" id="4sB-yk-pci"/>
+                                                        <constraint firstItem="ANX-GU-Quc" firstAttribute="centerX" secondItem="e2Z-pA-Bii" secondAttribute="centerX" id="LWg-I4-iEx"/>
+                                                        <constraint firstItem="ANX-GU-Quc" firstAttribute="top" secondItem="eaS-tP-rwe" secondAttribute="bottom" constant="8" id="Pk3-NS-o2d"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="eaS-tP-rwe" secondAttribute="trailing" constant="17" id="dB7-wl-MrJ"/>
+                                                        <constraint firstItem="eaS-tP-rwe" firstAttribute="leading" secondItem="e2Z-pA-Bii" secondAttribute="leadingMargin" constant="17" id="sB6-vP-ldO"/>
+                                                    </constraints>
+                                                    <size key="customSize" width="150" height="150"/>
+                                                    <connections>
+                                                        <outlet property="recipeImage" destination="eaS-tP-rwe" id="0Ta-Mb-44b"/>
+                                                        <outlet property="recipeName" destination="ANX-GU-Quc" id="Y3a-GJ-F1p"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="tym-30-jtQ" id="VCd-gL-a6U"/>
+                                                <outlet property="delegate" destination="tym-30-jtQ" id="BgV-AP-Bba"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="NrZ-NS-0ZC" secondAttribute="trailing" id="R9L-wZ-faa"/>
+                                        <constraint firstAttribute="bottom" secondItem="NrZ-NS-0ZC" secondAttribute="bottom" id="RIy-Bj-kuE"/>
+                                        <constraint firstItem="NrZ-NS-0ZC" firstAttribute="top" secondItem="dlO-If-4qD" secondAttribute="top" id="WQ0-Es-SfZ"/>
+                                        <constraint firstItem="NrZ-NS-0ZC" firstAttribute="leading" secondItem="dlO-If-4qD" secondAttribute="leading" id="tz4-bc-cod"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="mpf-qm-mLh" appends="YES" id="7GM-sy-kqK"/>
+                                    </connections>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nMp-SN-9eH" firstAttribute="top" secondItem="3pq-lL-V7R" secondAttribute="bottom" id="47w-DR-cLw"/>
+                            <constraint firstAttribute="trailing" secondItem="3pq-lL-V7R" secondAttribute="trailing" id="A9Z-pn-42u"/>
+                            <constraint firstAttribute="trailing" secondItem="P9T-OQ-JCZ" secondAttribute="trailing" id="HuT-6h-Fqn"/>
+                            <constraint firstItem="3pq-lL-V7R" firstAttribute="leading" secondItem="k2Z-ud-GPz" secondAttribute="leading" id="Pcr-Uw-dXA"/>
+                            <constraint firstItem="P9T-OQ-JCZ" firstAttribute="leading" secondItem="k2Z-ud-GPz" secondAttribute="leading" id="Vgr-sc-1iW"/>
+                            <constraint firstItem="3pq-lL-V7R" firstAttribute="top" secondItem="k2Z-ud-GPz" secondAttribute="top" id="faK-Ab-FgX"/>
+                            <constraint firstItem="nMp-SN-9eH" firstAttribute="top" secondItem="P9T-OQ-JCZ" secondAttribute="bottom" id="fes-5o-AOB"/>
+                            <constraint firstItem="P9T-OQ-JCZ" firstAttribute="top" secondItem="k2Z-ud-GPz" secondAttribute="top" id="pFi-1E-LXu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionCustomView" destination="NrZ-NS-0ZC" id="v0X-zE-E1t"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="642" y="326"/>
+            <point key="canvasLocation" x="648.79999999999995" y="331.48425787106447"/>
         </scene>
     </scenes>
     <resources>
@@ -549,8 +610,8 @@
         <image name="Image2" width="1024" height="1366"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mVA-wy-wul"/>
-        <segue reference="3Bi-2A-CuE"/>
         <segue reference="D4R-sG-T6e"/>
+        <segue reference="QIg-I0-ofb"/>
+        <segue reference="rRn-bR-4FN"/>
     </inferredMetricsTieBreakers>
 </document>
