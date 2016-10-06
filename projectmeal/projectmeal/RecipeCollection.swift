@@ -7,37 +7,55 @@
 //
 
 import UIKit
+import CoreData
 
-class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+@available(iOS 10.0, *)
+class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var collectionCustomView: UICollectionView!
+    var recipes: [Recipe] = []
+    var request: NSFetchedResultsController<Recipe>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.collectionCustomView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-
+        
+        let fetchRequest = NSFetchRequest<Recipe>(entityName: "Recipe")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+           request = NSFetchedResultsController(fetchRequest: fetchRequest , managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+           request.delegate = self
+            
+            do {
+              try request.performFetch()
+                recipes = request.fetchedObjects!
+            } catch {
+                print("Ошибка")
+            }
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    var items = ["Грибной суп", "Рыбка", "Каша", "Куриное филе", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
-    
-    
-    // MARK: - UICollectionViewDataSource protocol
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.recipes.count
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! RecipeCollectionViewCell
-        cell.recipeName.text = self.items[indexPath.item]
+        cell.recipeName.text = self.recipes[indexPath.item].name
+        cell.recipeImage.image = UIImage(data: recipes[indexPath.item].photo1 as! Data)
+        cell.recipeImage.layer.cornerRadius = 20
+        cell.recipeImage.clipsToBounds = true
+        
         
         return cell
     }

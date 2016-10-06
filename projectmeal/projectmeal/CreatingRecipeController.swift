@@ -274,10 +274,10 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
             recipe.ingredintNum = ingredientNum
             recipe.cooking = cooking
             recipe.note = note
-            if let recipePhoto = newImage.image {
+            if let recipePhoto = newImage2.image {
                 recipe.photo1 = UIImagePNGRepresentation(recipePhoto) as NSData?
             }
-            if let recipePhoto = newImage2.image {
+            if let recipePhoto = newImage.image {
                 recipe.photo2 = UIImagePNGRepresentation(recipePhoto) as NSData?
             }
             if let recipePhoto = newImage3.image {
