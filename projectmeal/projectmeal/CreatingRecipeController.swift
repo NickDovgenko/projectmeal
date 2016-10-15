@@ -309,8 +309,10 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
                 return
             }
             
-            
         }
-    
+        
+    // Переход на экран CollectionView
+    performSegue(withIdentifier: "saveAndQuit", sender: nil)
+        
     }
 }

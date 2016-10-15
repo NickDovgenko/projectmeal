@@ -14,6 +14,7 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
 
     @IBOutlet weak var collectionCustomView: UICollectionView!
     var recipes: [Recipe] = []
+    var deliverRecipe: [Recipe] = []
     var request: NSFetchedResultsController<Recipe>!
     
     override func viewDidLoad() {
@@ -25,7 +26,6 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
         let fetchRequest = NSFetchRequest<Recipe>(entityName: "Recipe")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        
         if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
            request = NSFetchedResultsController(fetchRequest: fetchRequest , managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
            request.delegate = self
@@ -56,16 +56,23 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
         cell.recipeImage.layer.cornerRadius = 20
         cell.recipeImage.clipsToBounds = true
         
-        
         return cell
     }
     
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-        print("You selected cell #\(indexPath.item)!")
+        deliverRecipe = [recipes[indexPath.item]]
+        self.performSegue(withIdentifier: "detailView", sender: indexPath)
+        print(deliverRecipe)
     }
-
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailView" {
+            let secondScene: DetailViewController = segue.destination as! DetailViewController            
+            secondScene.recievedData = deliverRecipe
+            print("RecipesList", recipes)
+            print("Prepare for segue")
+        }
+    } 
 }
