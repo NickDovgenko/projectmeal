@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,UIScrollViewDelegate {
 
-
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var recipeType: UILabel!
     @IBOutlet weak var photo1: UIImageView!
     @IBOutlet weak var photo2: UIImageView!
@@ -27,10 +27,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mealNotes: UITextView!
     
     var recievedData: [Recipe] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Рамки текстовых полей
         preparingMeal.layer.borderColor = UIColor.white.cgColor
         preparingMeal.layer.borderWidth = 1.0
         preparingMeal.layer.cornerRadius = 5
@@ -48,7 +49,7 @@ class DetailViewController: UIViewController {
         mealIngredientsNum.layer.cornerRadius = 5
         
         
-
+        //Вывод фото и текста
         self.photo1.image = UIImage(data: recievedData[0].photo1 as! Data)
         photo1.layer.cornerRadius = 20
         photo1.clipsToBounds = true
@@ -79,7 +80,7 @@ class DetailViewController: UIViewController {
         
         
         
-        self.title = recievedData[0].name
+        self.navigationItem.title = recievedData[0].name
         self.recipeType?.text = recievedData[0].type
         self.mealIngredients?.text = recievedData[0].ingredient
         self.mealIngredientsNum?.text = recievedData[0].ingredintNum
@@ -87,8 +88,12 @@ class DetailViewController: UIViewController {
         self.mealNotes?.text = recievedData[0].note
         
         print("Массив", recievedData)
-    
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationItem.rightBarButtonItem = editButtonItem
+        
     }
+    
     
 
     override func didReceiveMemoryWarning() {

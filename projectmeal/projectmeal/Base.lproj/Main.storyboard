@@ -336,7 +336,6 @@
                         <outlet property="preparingMeal" destination="BBZ-hO-RGY" id="hBy-Gm-TH0"/>
                         <outlet property="scrollView" destination="uN3-NM-abX" id="u3d-Xl-NcJ"/>
                         <outlet property="textLabel" destination="CDb-hu-4AP" id="hT4-u8-sME"/>
-                        <segue destination="tym-30-jtQ" kind="presentation" identifier="saveAndQuit" modalTransitionStyle="crossDissolve" id="W5N-Dh-Btl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPQ-Y3-e0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -483,7 +482,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="45p-Xt-iHQ">
                     <connections>
-                        <segue destination="tym-30-jtQ" kind="presentation" modalTransitionStyle="crossDissolve" id="rRn-bR-4FN"/>
+                        <segue destination="GGj-oT-eKC" kind="show" id="mjR-7P-nTH"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="DtA-iy-iOR">
@@ -493,11 +492,27 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="MN5-Df-l9Y">
                     <connections>
-                        <segue destination="tym-30-jtQ" kind="presentation" modalTransitionStyle="crossDissolve" id="Tez-dc-IPM"/>
+                        <segue destination="GGj-oT-eKC" kind="show" id="nSg-8i-fjH"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="97" y="324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6RZ-q3-AHN">
+            <objects>
+                <navigationController id="GGj-oT-eKC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kKV-fJ-Has">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tym-30-jtQ" kind="relationship" relationship="rootViewController" id="1Pq-TT-sCl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sg3-7N-wQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="323"/>
         </scene>
         <!--CollectionViewController-->
         <scene sceneID="LQn-qg-JBW">
@@ -595,17 +610,17 @@
                     <navigationItem key="navigationItem" id="vcS-Kz-IA8"/>
                     <connections>
                         <outlet property="collectionCustomView" destination="NrZ-NS-0ZC" id="v0X-zE-E1t"/>
-                        <segue destination="cMi-ev-rMx" kind="showDetail" identifier="detailView" id="hge-6X-bbo"/>
+                        <segue destination="cMi-ev-rMx" kind="show" identifier="detailView" id="hge-6X-bbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8s-ie-i57" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="mpf-qm-mLh">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="QIg-I0-ofb"/>
+                        <action selector="dismissController:" destination="tym-30-jtQ" id="oAx-7u-BLD"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="958" y="325"/>
+            <point key="canvasLocation" x="1697" y="325"/>
         </scene>
         <!--DetailView-->
         <scene sceneID="sYI-jU-tiH">
@@ -633,9 +648,6 @@
                                                         <constraint firstAttribute="height" constant="100" id="AFC-Ev-CSw"/>
                                                         <constraint firstAttribute="width" constant="100" id="x2v-a1-nzO"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="xXA-TU-KQ3" appends="YES" id="EQK-bh-anI"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="pxq-zq-s7D">
                                                     <gestureRecognizers/>
@@ -643,9 +655,6 @@
                                                         <constraint firstAttribute="width" constant="100" id="9xe-IB-IGT"/>
                                                         <constraint firstAttribute="height" constant="100" id="Qke-0O-k0i"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="hjL-4m-6Wm" appends="YES" id="Xfz-go-7Je"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="6Mr-Ja-lIR">
                                                     <gestureRecognizers/>
@@ -653,9 +662,6 @@
                                                         <constraint firstAttribute="width" constant="100" id="Eiq-LH-twe"/>
                                                         <constraint firstAttribute="height" constant="100" id="tw0-LY-G0O"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="Uo1-mT-dlR" appends="YES" id="U0n-wb-lpq"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-Tg-hDp">
                                                     <gestureRecognizers/>
@@ -663,9 +669,6 @@
                                                         <constraint firstAttribute="height" constant="100" id="MV1-P1-bda"/>
                                                         <constraint firstAttribute="width" constant="100" id="Yya-C3-NWc"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="lJg-6H-vph" appends="YES" id="Tl1-8Z-XgS"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="XcV-im-Zmx">
                                                     <gestureRecognizers/>
@@ -673,9 +676,6 @@
                                                         <constraint firstAttribute="height" constant="100" id="Jy7-dB-gxX"/>
                                                         <constraint firstAttribute="width" constant="100" id="gDB-0C-v6g"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="gab-w8-KbD" appends="YES" id="RVa-0r-6mV"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="fKY-CW-wvz">
                                                     <gestureRecognizers/>
@@ -683,9 +683,6 @@
                                                         <constraint firstAttribute="width" constant="100" id="3Si-Te-IFo"/>
                                                         <constraint firstAttribute="height" constant="100" id="Dzr-tz-0Hz"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="rEG-wg-Tn8" appends="YES" id="7a2-xq-cST"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="pkY-8q-Vjz">
                                                     <gestureRecognizers/>
@@ -693,9 +690,6 @@
                                                         <constraint firstAttribute="width" constant="100" id="Vfo-Wt-L9f"/>
                                                         <constraint firstAttribute="height" constant="100" id="Wwv-H8-n3d"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="Nrs-VG-RL1" appends="YES" id="GXP-9g-RqH"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="E6j-SQ-DOh">
                                                     <gestureRecognizers/>
@@ -703,9 +697,6 @@
                                                         <constraint firstAttribute="width" constant="100" id="nTZ-BQ-eEf"/>
                                                         <constraint firstAttribute="height" constant="100" id="sF6-wK-cTm"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="mMP-87-ZfD" appends="YES" id="v9B-F5-Rnt"/>
-                                                    </connections>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera-100" translatesAutoresizingMaskIntoConstraints="NO" id="iFq-ax-VVs">
                                                     <gestureRecognizers/>
@@ -713,33 +704,30 @@
                                                         <constraint firstAttribute="width" constant="100" id="nxb-oP-I9B"/>
                                                         <constraint firstAttribute="height" constant="100" id="qN3-sx-Iuv"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="1JQ-8f-Pyg" appends="YES" id="xMk-yR-gmj"/>
-                                                    </connections>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fKY-CW-wvz" firstAttribute="leading" secondItem="pkY-8q-Vjz" secondAttribute="trailing" constant="13" id="7aY-Tu-nrR"/>
                                                 <constraint firstItem="pkY-8q-Vjz" firstAttribute="leading" secondItem="9zx-Tg-hDp" secondAttribute="trailing" constant="13" id="Gsg-zf-kqj"/>
-                                                <constraint firstAttribute="bottom" secondItem="iFq-ax-VVs" secondAttribute="bottom" constant="15" id="Gwx-yT-sBE"/>
-                                                <constraint firstItem="XcV-im-Zmx" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="IQG-zs-cOa"/>
+                                                <constraint firstAttribute="bottom" secondItem="iFq-ax-VVs" secondAttribute="bottom" constant="10" id="Gwx-yT-sBE"/>
+                                                <constraint firstItem="XcV-im-Zmx" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="IQG-zs-cOa"/>
                                                 <constraint firstItem="iFq-ax-VVs" firstAttribute="leading" secondItem="RE1-kO-Waz" secondAttribute="leading" constant="10" id="Jpp-8d-y3E"/>
-                                                <constraint firstItem="E6j-SQ-DOh" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="MEz-xN-Cj7"/>
+                                                <constraint firstItem="E6j-SQ-DOh" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="MEz-xN-Cj7"/>
                                                 <constraint firstItem="6Mr-Ja-lIR" firstAttribute="leading" secondItem="Jgh-8V-jZ8" secondAttribute="trailing" constant="13" id="SBS-hW-g5u"/>
-                                                <constraint firstItem="9zx-Tg-hDp" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="TOf-vm-OkP"/>
-                                                <constraint firstItem="fKY-CW-wvz" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="TbF-sk-9Cp"/>
-                                                <constraint firstItem="Jgh-8V-jZ8" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="V3q-Vy-n6S"/>
+                                                <constraint firstItem="9zx-Tg-hDp" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="TOf-vm-OkP"/>
+                                                <constraint firstItem="fKY-CW-wvz" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="TbF-sk-9Cp"/>
+                                                <constraint firstItem="Jgh-8V-jZ8" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="V3q-Vy-n6S"/>
                                                 <constraint firstItem="9zx-Tg-hDp" firstAttribute="leading" secondItem="XcV-im-Zmx" secondAttribute="trailing" constant="13" id="XPX-4f-HHV"/>
                                                 <constraint firstItem="E6j-SQ-DOh" firstAttribute="leading" secondItem="fKY-CW-wvz" secondAttribute="trailing" constant="13" id="Xep-SV-hfG"/>
                                                 <constraint firstAttribute="height" constant="120" id="icy-C4-aFJ"/>
                                                 <constraint firstItem="XcV-im-Zmx" firstAttribute="leading" secondItem="pxq-zq-s7D" secondAttribute="trailing" constant="13" id="ma4-X1-UFM"/>
-                                                <constraint firstItem="pkY-8q-Vjz" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="mve-5w-tsV"/>
-                                                <constraint firstItem="6Mr-Ja-lIR" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="rqS-Vf-IwU"/>
+                                                <constraint firstItem="pkY-8q-Vjz" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="mve-5w-tsV"/>
+                                                <constraint firstItem="6Mr-Ja-lIR" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="rqS-Vf-IwU"/>
                                                 <constraint firstAttribute="trailing" secondItem="E6j-SQ-DOh" secondAttribute="trailing" constant="10" id="ruX-E6-emx"/>
-                                                <constraint firstItem="pxq-zq-s7D" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="sPc-0u-Gvo"/>
+                                                <constraint firstItem="pxq-zq-s7D" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="sPc-0u-Gvo"/>
                                                 <constraint firstItem="pxq-zq-s7D" firstAttribute="leading" secondItem="6Mr-Ja-lIR" secondAttribute="trailing" constant="13" id="slt-uu-1aS"/>
                                                 <constraint firstItem="Jgh-8V-jZ8" firstAttribute="leading" secondItem="iFq-ax-VVs" secondAttribute="trailing" constant="13" id="tGx-1W-Hs9"/>
-                                                <constraint firstItem="iFq-ax-VVs" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="5" id="z9H-3G-Ura"/>
+                                                <constraint firstItem="iFq-ax-VVs" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="top" constant="10" id="z9H-3G-Ura"/>
                                             </constraints>
                                         </scrollView>
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cer-LW-Uyy" userLabel="Вертикальный вид">
@@ -769,17 +757,6 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dP8-l6-zhJ">
-                                                    <rect key="frame" x="15" y="243" width="335" height="170"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="170" id="uoD-ar-yJ6"/>
-                                                    </constraints>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done"/>
-                                                </textView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ9-uc-9Nj">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -813,12 +790,22 @@
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done"/>
                                                 </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dP8-l6-zhJ">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="170" id="uoD-ar-yJ6"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vYF-Dm-Jnk" firstAttribute="leading" secondItem="Cer-LW-Uyy" secondAttribute="leading" constant="15" id="0Ag-7Z-Ba8"/>
                                                 <constraint firstItem="Viu-5b-rsf" firstAttribute="top" secondItem="Cer-LW-Uyy" secondAttribute="top" constant="10" id="0cM-o7-X2u"/>
                                                 <constraint firstAttribute="trailing" secondItem="CJ9-uc-9Nj" secondAttribute="trailing" constant="15" id="10k-f1-2f7"/>
-                                                <constraint firstItem="pLm-HM-DJX" firstAttribute="top" secondItem="Cer-LW-Uyy" secondAttribute="top" constant="30" id="1ey-7W-4vK"/>
+                                                <constraint firstItem="pLm-HM-DJX" firstAttribute="top" secondItem="Cer-LW-Uyy" secondAttribute="top" constant="37" id="1ey-7W-4vK"/>
                                                 <constraint firstItem="CJ9-uc-9Nj" firstAttribute="leading" secondItem="Cer-LW-Uyy" secondAttribute="leading" constant="15" id="3cC-aU-0F4"/>
                                                 <constraint firstItem="Wbc-am-7pn" firstAttribute="top" secondItem="vYF-Dm-Jnk" secondAttribute="bottom" constant="8" id="8id-GH-RVh"/>
                                                 <constraint firstItem="vYF-Dm-Jnk" firstAttribute="top" secondItem="pLm-HM-DJX" secondAttribute="bottom" constant="8" id="9M3-Mb-9SG"/>
@@ -836,7 +823,7 @@
                                                 <constraint firstItem="dP8-l6-zhJ" firstAttribute="top" secondItem="Wbc-am-7pn" secondAttribute="bottom" constant="8" id="f9g-am-4vD"/>
                                                 <constraint firstItem="QBR-do-wjO" firstAttribute="leading" secondItem="vYF-Dm-Jnk" secondAttribute="trailing" constant="8" id="jXR-ER-f7C"/>
                                                 <constraint firstItem="Viu-5b-rsf" firstAttribute="centerX" secondItem="Cer-LW-Uyy" secondAttribute="centerX" id="lUU-Ae-03l"/>
-                                                <constraint firstItem="gNK-E3-KT3" firstAttribute="top" secondItem="Cer-LW-Uyy" secondAttribute="top" constant="30" id="tla-dA-5Ga"/>
+                                                <constraint firstItem="gNK-E3-KT3" firstAttribute="top" secondItem="Cer-LW-Uyy" secondAttribute="top" constant="37" id="tla-dA-5Ga"/>
                                                 <constraint firstAttribute="trailing" secondItem="gNK-E3-KT3" secondAttribute="trailing" constant="15" id="z4y-Pi-ePr"/>
                                             </constraints>
                                         </scrollView>
@@ -850,7 +837,7 @@
                                         <constraint firstAttribute="trailing" secondItem="RE1-kO-Waz" secondAttribute="trailing" id="dgD-Zs-tap"/>
                                         <constraint firstAttribute="bottom" secondItem="Cer-LW-Uyy" secondAttribute="bottom" id="hB7-jg-RBA"/>
                                         <constraint firstAttribute="trailing" secondItem="RE1-kO-Waz" secondAttribute="trailing" id="jHh-Ob-93l"/>
-                                        <constraint firstItem="RE1-kO-Waz" firstAttribute="top" secondItem="x9y-0f-rwB" secondAttribute="top" constant="100.5" id="lHm-0C-QNW"/>
+                                        <constraint firstItem="RE1-kO-Waz" firstAttribute="top" secondItem="x9y-0f-rwB" secondAttribute="top" constant="90" id="lHm-0C-QNW"/>
                                         <constraint firstItem="Cer-LW-Uyy" firstAttribute="top" secondItem="RE1-kO-Waz" secondAttribute="bottom" constant="8" id="uGv-W2-2S3"/>
                                     </constraints>
                                 </view>
@@ -887,29 +874,20 @@
                         <outlet property="photo9" destination="E6j-SQ-DOh" id="4le-a5-SQL"/>
                         <outlet property="preparingMeal" destination="dP8-l6-zhJ" id="hQp-QG-JTw"/>
                         <outlet property="recipeType" destination="Viu-5b-rsf" id="Ubs-6j-E0K"/>
+                        <outlet property="scrollView" destination="RE1-kO-Waz" id="nW1-TI-vKA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxV-EM-f2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xXA-TU-KQ3"/>
-                <tapGestureRecognizer id="1JQ-8f-Pyg"/>
-                <tapGestureRecognizer id="Uo1-mT-dlR"/>
-                <tapGestureRecognizer id="hjL-4m-6Wm"/>
-                <tapGestureRecognizer id="gab-w8-KbD"/>
-                <tapGestureRecognizer id="lJg-6H-vph"/>
-                <tapGestureRecognizer id="Nrs-VG-RL1"/>
-                <tapGestureRecognizer id="rEG-wg-Tn8"/>
-                <tapGestureRecognizer id="mMP-87-ZfD"/>
             </objects>
-            <point key="canvasLocation" x="2321" y="325"/>
+            <point key="canvasLocation" x="2361" y="324"/>
         </scene>
     </scenes>
     <resources>
         <image name="Camera-100" width="100" height="100"/>
-        <image name="Image2" width="360" height="640"/>
+        <image name="Image2" width="1024" height="1366"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRn-bR-4FN"/>
-        <segue reference="QIg-I0-ofb"/>
-        <segue reference="D4R-sG-T6e"/>
+        <segue reference="nSg-8i-fjH"/>
+        <segue reference="xDd-2h-coT"/>
     </inferredMetricsTieBreakers>
 </document>

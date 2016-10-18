@@ -14,6 +14,7 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     var imageNum = 0
     var selectedRow = String()
     var recipe: Recipe!
+    var keyBoardCount = 0
     
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var newImage2: UIImageView!
@@ -204,22 +205,33 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
 
     func keyboardWillShow(notification:NSNotification) {
         
-        ViewUpanimateMoving(up: true, upValue: 100)
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        keyBoardCount += 1
+        if keyBoardCount <= 1 {
+            
+            ViewUpanimateMoving(up: true, upValue: 150)
+            var userInfo = notification.userInfo!
+            var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+            keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+            
+            var contentInset: UIEdgeInsets = self.scrollView.contentInset
+            contentInset.bottom = self.scrollView.contentInset.bottom
+            self.scrollView.contentInset = contentInset
+        }
+        else {
+            keyBoardCount -= 1
+        }
+       // print(keyBoardCount)
         
-        var contentInset: UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        self.scrollView.contentInset = contentInset
     }
     
     func keyboardWillHide(notification:NSNotification) {
         
-        ViewUpanimateMoving(up: false, upValue: 100)
+        ViewUpanimateMoving(up: false, upValue: 150)
         let contentInset: UIEdgeInsets = UIEdgeInsets()
         self.scrollView.contentInset = contentInset
+        keyBoardCount = 0
     }
+    
     
     // Анимация
     
@@ -312,7 +324,9 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
         }
         
     // Переход на экран CollectionView
-    performSegue(withIdentifier: "saveAndQuit", sender: nil)
+        
+        self.dismiss(animated: true, completion: {})
         
     }
+    
 }

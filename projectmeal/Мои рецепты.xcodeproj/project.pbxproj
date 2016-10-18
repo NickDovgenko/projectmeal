@@ -16,6 +16,8 @@
 		0133F35B1D4A825900F245E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133F3591D4A825900F245E6 /* LaunchScreen.storyboard */; };
 		0133F3661D4A825900F245E6 /* projectmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133F3651D4A825900F245E6 /* projectmealTests.swift */; };
 		0135CF6C1DAC1F7000FE979F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0135CF6B1DAC1F7000FE979F /* DetailViewController.swift */; };
+		018D7BE11DB570AB00AFCB0A /* BTNavigationDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 018D7BDF1DB570AB00AFCB0A /* BTNavigationDropdownMenu.bundle */; };
+		018D7BE21DB570AB00AFCB0A /* BTNavigationDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018D7BE01DB570AB00AFCB0A /* BTNavigationDropdownMenu.swift */; };
 		01AF5AE91DA42CD9003542EA /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5AE81DA42CD9003542EA /* RecipeCollectionViewCell.swift */; };
 		01D6AFAF1D9DBE8A009CA557 /* RecipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01D6AFAD1D9DBE8A009CA557 /* RecipeModel.xcdatamodeld */; };
 		01F61B191DA42FA9006D9152 /* RecipeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F61B181DA42FA9006D9152 /* RecipeCollection.swift */; };
@@ -39,6 +41,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		016780221DB557EE00A5A0AF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		01052B761D9E7D79004249AB /* OwnHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OwnHand.ttf; sourceTree = SOURCE_ROOT; };
 		0125663A1D58A136003085DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +69,8 @@
 		0133F3671D4A825900F245E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0133F36C1D4A825900F245E6 /* Мои рецепты.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Мои рецепты.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0135CF6B1DAC1F7000FE979F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		018D7BDF1DB570AB00AFCB0A /* BTNavigationDropdownMenu.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BTNavigationDropdownMenu.bundle; sourceTree = "<group>"; };
+		018D7BE01DB570AB00AFCB0A /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
 		01AF5AE81DA42CD9003542EA /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		01D6AFAE1D9DBE8A009CA557 /* RecipeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeModel.xcdatamodel; sourceTree = "<group>"; };
 		01F61B181DA42FA9006D9152 /* RecipeCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCollection.swift; sourceTree = "<group>"; };
@@ -104,6 +121,15 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		012A76F91DB5644B00AFEFF3 /* DropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				018D7BDF1DB570AB00AFCB0A /* BTNavigationDropdownMenu.bundle */,
+				018D7BE01DB570AB00AFCB0A /* BTNavigationDropdownMenu.swift */,
+			);
+			name = DropDownMenu;
+			sourceTree = "<group>";
+		};
 		0133F3411D4A825900F245E6 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +152,7 @@
 		0133F34C1D4A825900F245E6 /* projectmeal */ = {
 			isa = PBXGroup;
 			children = (
+				012A76F91DB5644B00AFEFF3 /* DropDownMenu */,
 				01D6AFAD1D9DBE8A009CA557 /* RecipeModel.xcdatamodeld */,
 				0125985C1D7C501800FD3125 /* ViewControllers */,
 				01FED8981DA1233E0044A473 /* Recipe.swift */,
@@ -159,6 +186,7 @@
 				0133F3461D4A825900F245E6 /* Sources */,
 				0133F3471D4A825900F245E6 /* Frameworks */,
 				0133F3481D4A825900F245E6 /* Resources */,
+				016780221DB557EE00A5A0AF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0133F35B1D4A825900F245E6 /* LaunchScreen.storyboard in Resources */,
+				018D7BE11DB570AB00AFCB0A /* BTNavigationDropdownMenu.bundle in Resources */,
 				0133F3581D4A825900F245E6 /* Assets.xcassets in Resources */,
 				01052B771D9E7D79004249AB /* OwnHand.ttf in Resources */,
 				0133F3531D4A825900F245E6 /* Main.storyboard in Resources */,
@@ -289,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01AF5AE91DA42CD9003542EA /* RecipeCollectionViewCell.swift in Sources */,
+				018D7BE21DB570AB00AFCB0A /* BTNavigationDropdownMenu.swift in Sources */,
 				0133F3501D4A825900F245E6 /* MainViewController.swift in Sources */,
 				01D6AFAF1D9DBE8A009CA557 /* RecipeModel.xcdatamodeld in Sources */,
 				0125985E1D7C518800FD3125 /* CreatingRecipeController.swift in Sources */,
@@ -442,6 +472,7 @@
 		0133F3761D4A825900F245E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -458,6 +489,7 @@
 		0133F3771D4A825900F245E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
