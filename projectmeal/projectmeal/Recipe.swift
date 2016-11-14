@@ -27,5 +27,6 @@ class Recipe: NSManagedObject {
     @NSManaged var photo7: NSData?
     @NSManaged var photo8: NSData?
     @NSManaged var photo9: NSData?
+    var recipeIndx = 0
     
 }

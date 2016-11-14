@@ -135,43 +135,47 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         
-        if imageNum == 1 {
+        switch imageNum {
+        case 1:
             newImage.image = pickedImage
             newImage.layer.cornerRadius = 20
             newImage.clipsToBounds = true
-        } else if imageNum == 2 {
+        case 2:
             newImage2.image = pickedImage
             newImage2.layer.cornerRadius = 20
             newImage2.clipsToBounds = true
-        } else if imageNum == 3 {
+        case 3:
             newImage3.image = pickedImage
             newImage3.layer.cornerRadius = 20
             newImage3.clipsToBounds = true
-        } else if imageNum == 4 {
+        case 4:
             newImage4.image = pickedImage
             newImage4.layer.cornerRadius = 20
             newImage4.clipsToBounds = true
-        } else if imageNum == 5 {
+        case 5:
             newImage5.image = pickedImage
             newImage5.layer.cornerRadius = 20
             newImage5.clipsToBounds = true
-        } else if imageNum == 6 {
+        case 6:
             newImage6.image = pickedImage
             newImage6.layer.cornerRadius = 20
             newImage6.clipsToBounds = true
-        } else if imageNum == 7 {
+        case 7:
             newImage7.image = pickedImage
             newImage7.layer.cornerRadius = 20
             newImage7.clipsToBounds = true
-        } else if imageNum == 8 {
+        case 8:
             newImage8.image = pickedImage
             newImage8.layer.cornerRadius = 20
             newImage8.clipsToBounds = true
-        } else if imageNum == 9 {
+        case 9:
             newImage9.image = pickedImage
             newImage9.layer.cornerRadius = 20
             newImage9.clipsToBounds = true
+        default:
+            imageNum = 0
         }
+        
             dismiss(animated: true, completion: nil)
     }
     
@@ -286,6 +290,7 @@ class CreatingRecipeController: UIViewController, UIImagePickerControllerDelegat
             recipe.ingredintNum = ingredientNum
             recipe.cooking = cooking
             recipe.note = note
+            
             if let recipePhoto = newImage2.image {
                 recipe.photo1 = UIImagePNGRepresentation(recipePhoto) as NSData?
             }

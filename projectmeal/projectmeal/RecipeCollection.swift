@@ -28,6 +28,7 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
         super.viewDidLoad()
         
         
+        
         let items = ["Все рецепты", "Избранное", "Первые блюда", "Вторые блюда", "Салаты", "Закуски", "Десерты", "Напитки", "Разное"]
         //Прозрачный Navigation bar
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
@@ -94,6 +95,7 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
                 print(self.menuSelected)
             }
         }
+    
         
         self.navigationItem.titleView = menuView
 
@@ -104,6 +106,7 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+            
            request = NSFetchedResultsController(fetchRequest: fetchRequest , managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
            request.delegate = self
             
@@ -123,15 +126,11 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
     func filterContentForSearchText(searchText: String) {
         if searchText != "Избранное" {
         filterRecipes = recipes.filter { recipe in
-            print(filterRecipes)
-            print(recipe.type)
             return recipe.type.lowercased().contains(searchText.lowercased())
             }
         }
         else {
             filterRecipes = recipes.filter { recipe in
-                print(filterRecipes)
-                print(recipe.type)
                 return recipe.favorite == true
             }
         }
@@ -182,13 +181,14 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
             let secondScene: DetailViewController = segue.destination as! DetailViewController            
             secondScene.recievedData = deliverRecipe
             print("RecipesList", recipes)
-            print("Prepare for segue")
         }
         
     }
+    
     func itemSelected(withIndex: Int, name: String) {
         print("\(name) selected");
     }
+    
     
     
 }
