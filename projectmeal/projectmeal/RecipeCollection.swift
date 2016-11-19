@@ -15,7 +15,7 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
     @IBOutlet weak var collectionCustomView: UICollectionView!
     var recipes: [Recipe] = []
     var filterRecipes: [Recipe] = []
-    var deliverRecipe: [Recipe] = []
+    var deliverRecipe = [NSManagedObject]()
     var request: NSFetchedResultsController<Recipe>!
     var menuView: BTNavigationDropdownMenu!
     var menuSelected: String = "Все рецепты"
@@ -26,8 +26,6 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         let items = ["Все рецепты", "Избранное", "Первые блюда", "Вторые блюда", "Салаты", "Закуски", "Десерты", "Напитки", "Разное"]
         //Прозрачный Navigation bar
@@ -179,7 +177,7 @@ class RecipeCollection: UIViewController,UICollectionViewDelegate,UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailView" {
             let secondScene: DetailViewController = segue.destination as! DetailViewController            
-            secondScene.recievedData = deliverRecipe
+            secondScene.recipe = deliverRecipe 
             print("RecipesList", recipes)
         }
         

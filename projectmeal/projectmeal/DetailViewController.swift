@@ -13,6 +13,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UIImagePicke
     
     var imageNum = 0
     var keyBoardCount = 0
+    var favorite = false
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var recipeType: UILabel!
     @IBOutlet weak var photo1: UIImageView!
@@ -28,14 +30,42 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UIImagePicke
     @IBOutlet weak var mealIngredientsNum: UITextView!
     @IBOutlet weak var preparingMeal: UITextView!
     @IBOutlet weak var mealNotes: UITextView!
-    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var favoriteButton: UIButton!
     
+
     var recipe = [NSManagedObject]()
-    var recievedData: [Recipe] = []
+    
+    @IBAction func deleteRecipe(_ sender: UIBarButtonItem) {
+            let alertController = UIAlertController(title: "Внимание!", message: "Вы действительно хотите удалить рецепт?", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive)
+            { ACTION -> Void in
+                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
+                    do {
+                        _ = try managedObjectContext.execute(fetchRequest)
+                        managedObjectContext.delete(self.recipe[0])
+                    }
+                    catch {
+                        print("error")
+                        return
+                    }
+                }
+                self.dismiss(animated: true, completion: nil)
+            })
+        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        return
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Кнопка избранное
+        favoriteButton.addTarget(self, action: #selector(clickFavorite), for: .touchUpInside)
+        self.buttonImage()
+        
+        print(recipe)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -62,45 +92,40 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UIImagePicke
         
         
         //Вывод фото и текста
-        self.photo1.image = UIImage(data: recievedData[0].photo1 as! Data)
+        self.photo1.image = UIImage(data: recipe[0].value(forKey: "photo1") as! Data)
         photo1.layer.cornerRadius = 20
         photo1.clipsToBounds = true
-        self.photo2.image = UIImage(data: recievedData[0].photo2 as! Data)
+        self.photo2.image = UIImage(data: recipe[0].value(forKey: "photo2") as! Data)
         photo2.layer.cornerRadius = 20
         photo2.clipsToBounds = true
-        self.photo3.image = UIImage(data: recievedData[0].photo3 as! Data)
+        self.photo3.image = UIImage(data: recipe[0].value(forKey: "photo3") as! Data)
         photo3.layer.cornerRadius = 20
         photo3.clipsToBounds = true
-        self.photo4.image = UIImage(data: recievedData[0].photo4 as! Data)
+        self.photo4.image = UIImage(data: recipe[0].value(forKey: "photo4") as! Data)
         photo4.layer.cornerRadius = 20
         photo4.clipsToBounds = true
-        self.photo5.image = UIImage(data: recievedData[0].photo5 as! Data)
+        self.photo5.image = UIImage(data: recipe[0].value(forKey: "photo5") as! Data)
         photo5.layer.cornerRadius = 20
         photo5.clipsToBounds = true
-        self.photo6.image = UIImage(data: recievedData[0].photo6 as! Data)
+        self.photo6.image = UIImage(data: recipe[0].value(forKey: "photo6") as! Data)
         photo6.layer.cornerRadius = 20
         photo6.clipsToBounds = true
-        self.photo7.image = UIImage(data: recievedData[0].photo7 as! Data)
+        self.photo7.image = UIImage(data: recipe[0].value(forKey: "photo7") as! Data)
         photo7.layer.cornerRadius = 20
         photo7.clipsToBounds = true
-        self.photo8.image = UIImage(data: recievedData[0].photo8 as! Data)
+        self.photo8.image = UIImage(data: recipe[0].value(forKey: "photo8") as! Data)
         photo8.layer.cornerRadius = 20
         photo8.clipsToBounds = true
-        self.photo9.image = UIImage(data: recievedData[0].photo9 as! Data)
+        self.photo9.image = UIImage(data: recipe[0].value(forKey: "photo9") as! Data)
         photo9.layer.cornerRadius = 20
         photo9.clipsToBounds = true
         
-        
-        
-        self.navigationItem.title = recievedData[0].name
-        self.recipeType?.text = recievedData[0].type
-        self.mealIngredients?.text = recievedData[0].ingredient
-        self.mealIngredientsNum?.text = recievedData[0].ingredintNum
-        self.preparingMeal?.text = recievedData[0].cooking
-        self.mealNotes?.text = recievedData[0].note
-        
-        print("Массив", recievedData)
-   
+        self.navigationItem.title = recipe[0].value(forKey: "name") as! String?
+        self.recipeType?.text = recipe[0].value(forKey: "type") as! String?
+        self.mealIngredients?.text = recipe[0].value(forKey: "ingredient") as! String?
+        self.mealIngredientsNum?.text = recipe[0].value(forKey: "ingredintNum") as! String?
+        self.preparingMeal?.text = recipe[0].value(forKey: "cooking") as! String?
+        self.mealNotes?.text = recipe[0].value(forKey: "note") as! String?
         
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationItem.rightBarButtonItem = editButtonItem
@@ -250,7 +275,57 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UIImagePicke
             preparingMeal.isEditable = true
         }
         else {
+            
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
+                do {
+                    _ = try managedObjectContext.execute(fetchRequest)
+                    
+                    let managedObject = recipe
+                    let mealIngredientsNumText = mealIngredientsNum?.text
+                    let mealIngredientsText = mealIngredients?.text
+                    let mealNotesText = mealNotes?.text
+                    let mealCookingText = preparingMeal?.text
+                    
+                    if let recipePhoto = photo1.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo1")
+                    }
+                    if let recipePhoto = photo2.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo2")
+                    }
+                    if let recipePhoto = photo3.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo3")
+                    }
+                    if let recipePhoto = photo4.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo4")
+                    }
+                    if let recipePhoto = photo5.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo5")
+                    }
+                    if let recipePhoto = photo6.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo6")
+                    }
+                    if let recipePhoto = photo7.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo7")
+                    }
+                    if let recipePhoto = photo8.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo8")
+                    }
+                    if let recipePhoto = photo9.image {
+                        managedObject[0].setValue(UIImagePNGRepresentation(recipePhoto) as NSData?, forKey: "photo9")
+                    }
+                    
+                    managedObject[0].setValue(mealIngredientsNumText, forKey: "ingredintNum")
+                    managedObject[0].setValue(mealNotesText, forKey: "note")
+                    managedObject[0].setValue(mealIngredientsText, forKey: "ingredient")
+                    managedObject[0].setValue(mealCookingText, forKey: "cooking")
+                    
+                        try managedObjectContext.save()
+                }
+                    catch {
+                        print("error")
+                        return
+                    }
             }
             photo1.isUserInteractionEnabled = false
             photo2.isUserInteractionEnabled = false
@@ -267,6 +342,69 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UIImagePicke
             preparingMeal.isEditable = false
         }
     }
+    
+    func clickFavorite() {
+        print(favorite)
+        var variableFavoritee: Bool?
+        variableFavoritee = recipe[0].value(forKey: "favorite") as! Bool?
+        if  variableFavoritee == favorite || variableFavoritee == nil {
+            favorite = true
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
+                do {
+                    _ = try managedObjectContext.execute(fetchRequest)
+                    recipe[0].setValue(favorite, forKey: "favorite")
+                    try managedObjectContext.save()
+                }
+                catch {
+                    print("error")
+                    return
+                }
+                let image = UIImage(named: "filledStar")
+                favoriteButton.setImage(image, for: .normal)
+                favorite = false
+                let alertController = UIAlertController(title: "Добавлено в избранное", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default))
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+        }
+        else {
+            favorite = false
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
+                do {
+                    _ = try managedObjectContext.execute(fetchRequest)
+                    recipe[0].setValue(favorite, forKey: "favorite")
+                    try managedObjectContext.save()
+                }
+                catch {
+                    print("error")
+                    return
+                }
+                let image = UIImage(named: "emptyStar")
+                favoriteButton.setImage(image, for: .normal)
+                let alertController = UIAlertController(title: "Удалено из избранного", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default))
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
+    func buttonImage() {
+        var variableFavoritee: Bool?
+        variableFavoritee = recipe[0].value(forKey: "favorite") as! Bool?
+        if  variableFavoritee == favorite || variableFavoritee == nil {
+            let image = UIImage(named: "emptyStar")
+            favoriteButton.setImage(image, for: .normal)
+        }
+        else {
+            let image = UIImage(named: "filledStar")
+            favoriteButton.setImage(image, for: .normal)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
